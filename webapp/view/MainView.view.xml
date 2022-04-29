@@ -1,0 +1,59 @@
+<mvc:View
+    controllerName="acc.products.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <Table id="idProductsTable"
+                        inset="false"
+                        items="{ProductsJSONModel>/}">
+                        <!-- <headerToolbar>
+                            <OverflowToolbar id="ovTolTable">                              
+                                <Title id="tableTitle" text="{i18n>title}" level="H2"/>
+                                <ToolbarSpacer id="mainTableTS"/>
+                                <SearchField id="mySearchField" liveChange="onSearchNames" placeholder="{i18n>fullName}" width="10rem"/>
+                                <Button id="sortButton" press="onOpenSortPopUp" icon="sap-icon://sort" type="Transparent" tooltip="{i18n>sortTooltip}" />
+                            </OverflowToolbar>
+                        </headerToolbar> -->
+                        <columns>
+                            <Column id="col1">
+                                <Text id="tt1" text="ID" />
+                            </Column>
+                            <Column id="col2">
+                                <Text id="tt2" text="Nombre" />
+                            </Column>
+                            <Column id="col3">
+                                <Text id="tt3" text="Proveedor" />
+                            </Column>
+                            <Column id="col4">
+                                <Text id="tt4" text="Categoría" />
+                            </Column>
+                            <Column id="col5">
+                                <Text id="tt5" text="Precio" />
+                            </Column>
+                            <Column id="col6">
+                                <Text id="tt6" text="Stock" />
+                            </Column>                            
+                        </columns>
+                        <items>
+                            <ColumnListItem id="colistTable" vAlign="Middle">
+                                <cells>
+                                    <Text id="content1" text="{ProductsJSONModel>ProductID}" />
+                                    <Text id="content2" text="{ProductsJSONModel>ProductName}" />
+                                    <Text id="content3" text="{ProductsJSONModel>SupplierID}" />
+                                    <Text id="content4" text="{ProductsJSONModel>CategoryID}" />
+                                    <Text id="content5" text="{ProductsJSONModel>UnitPrice}" />
+                                    <Text id="content6" text="{ProductsJSONModel>UnitsInStock}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
